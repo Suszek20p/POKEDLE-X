@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 70px;
+  font-size: 50px;
 }
 .light_theme_wallpaper {
   position: absolute;
@@ -33,16 +33,14 @@
   width: 1000px;
   height: 300px;
   margin-top: 15%;
-  margin-left: 8%;
-  margin-right: 8%;
+  margin-left: 5%;
+  margin-right: 5%;
   
   background: rgba(139, 234, 255, 0.9);
   border-radius: 75px;
 
   font-family: 'Inria Sans';
-  font-weight: 400;
-  font-size: 96px;
-  line-height: 115px;
+  font-size: 50px;
   display: block;
   align-items: center;
   text-align: center;
@@ -59,3 +57,66 @@ a:hover{
   color: #008afb;
 }
 
+.form
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background: rgba(139, 234, 255, 0.9);
+  border-radius: 75px;
+}
+
+.dane
+{
+  text-align: center;
+  background: rgba(139, 218, 255, 0.877);
+  border-radius: 75px;
+  width: 50%;
+  height: 20px;
+  margin-bottom: 2%;
+  margin-left: 25%;
+  font-size: 20px;
+}
+
+.submit
+{
+  display: inline-block;
+  text-align: center;
+  background: #0F0;
+  border-radius: 75px;
+  width: 50%;
+  height: 50px;
+  margin-bottom: 2%;
+  margin-left: 25%;
+  font-size: 28px;
+}
+
+.reset{
+  display: inline-block;
+  text-align: center;
+  background: #ff0000;
+  border-radius: 75px;
+  width: 50%;
+  height: 50px;
+  margin-bottom: 1%;
+  margin-top: 7%;
+  margin-left: 25%;
+  font-size: 28px;
+}
+
+.checkbox{
+  display: block;
+}
+
+.submit:hover{
+  cursor: pointer;
+}
+
+.reset:hover{
+  cursor: pointer;
+}

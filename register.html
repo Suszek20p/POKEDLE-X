@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>POKEDLE X</title>
+  </head>
+  <body>
+    <div class="logo"><b> POKEDLE X </b></div>
+    <img
+      class="light_theme_wallpaper"
+      src="light_theme.png"
+      alt="light theme wallpaper"
+    />
+
+    <div class="form">
+        <form method="POST" action="register.php">
+            <input class="dane" type="text" name="nick" maxlength="20" placeholder="Nickname" required>
+            <input class="dane" type="email" name="email" placeholder="E-mail" required>
+            <input class="dane" type="password" name="password" maxlength="30" placeholder="Password" required>
+            <input class="dane" type="password" name="password2" maxlength="30" placeholder="Repeat password" required>
+            <input type="checkbox" name="NoRobot" class="checkbox" required> I'm not a robot
+            <input type="checkbox" name="AgreeForDane" class="checkbox" required> I agree to the processing of my personal data
+            <input type="reset" value="Reset" class="reset">
+            <input type="submit" name="submit" class="submit" value="Create Account">
+        </form>
+    </div>
+
+  </body>
+</html>
