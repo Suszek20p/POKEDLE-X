@@ -1,6 +1,6 @@
 CREATE TABLE users (
     user_id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_fullname varchar(128) NOT NULL,
+    user_nickname varchar(128) NOT NULL,
     user_email varchar(128) NOT NULL,
     user_passwordhash varchar(255) NOT NULL,
     PRIMARY KEY (user_id),
