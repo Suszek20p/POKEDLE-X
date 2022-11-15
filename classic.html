@@ -15,20 +15,46 @@
       alt="light theme wallpaper"
     />
 
-    <div class="option">
-      <input type="button" value="pokemon" class="pokemon" />
+    <div class="div_chose_pokemon">
+      <input
+        type="button"
+        value="CHECK YOUR LUCK"
+        id="pokemon"
+        class="chose_pokemon"
+      />
     </div>
 
+    <div class="no_luck">TU MAJĄ BYĆ NIE ODGADNIĘTE POKEMONY</div>
+
     <script>
-      const pokemon = document.querySelector("[class=pokemon]");
+      let Chosen_pokemon = prompt("CHOSE POKEMON");
+
+      const pokemon = document.querySelector("[id=pokemon]");
       pokemon.addEventListener("click", fetchAllPokemon);
+
+      let Random_pokemon;
 
       function fetchAllPokemon() {
         fetch("https://pokeapi.co/api/v2/pokemon?limit=898")
           .then((response) => response.json())
-          .then((allpokemon) =>
-            console.log(allpokemon.results[Math.floor(Math.random() * 899)])
-          );
+          .then(
+            (allpokemon) =>
+              (Random_pokemon =
+                allpokemon.results[Math.floor(Math.random() * 899)])
+          )
+          .then(
+            fetch(
+              "https://pokeapi.co/api/v2/pokemon/" +
+                Math.floor(Math.random() * 2 + 1)
+            )
+          )
+          .then((data) => {
+            if (data.name == Chosen_pokemon) {
+              console.log("zgadłeś pokemona " + data.name);
+            } else {
+              console.log("nie zgadłeś pokemona " + data.name);
+            }
+          });
       }
     </script>
   </body>
