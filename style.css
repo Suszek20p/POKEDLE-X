@@ -117,27 +117,58 @@ a:hover {
   cursor: pointer;
 }
 
-.chose_pokemon {
-  width: 1000px;
-  height: 300px;
-  margin-top: 12%;
-  margin-left: 25%;
-  margin-right: 25%;
+.chose_pokemon1 {
+  width: 500px;
+  height: 200px;
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
 
   background: rgba(139, 234, 255, 0.9);
   border-radius: 75px;
 
   font-family: "Inria Sans";
-  font-size: 50px;
-  display: block;
+  font-size: 36px;
+  display: inline-block;
   align-items: center;
   text-align: center;
 
-  color: #00bffb;
+  color: #006eff;
+ 
+}
+
+.chose_pokemon1:hover {
+  background: rgba(139, 207, 255, 0.9);
+  color: #1500ff;
+  cursor: pointer;
+}
+
+.chose_pokemon2 {
+  width: 500px;
+  height: 200px;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  background: rgba(139, 234, 255, 0.9);
+  border-radius: 75px;
+
+  font-family: "Inria Sans";
+  font-size: 36px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+
+  color: #006eff;
+}
+
+.chose_pokemon2:hover {
+  background: rgba(139, 207, 255, 0.9);
+  color: #1500ff;
+  cursor: pointer;
 }
 
 .div_chose_pokemon {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,7 +176,14 @@ a:hover {
 
 .no_luck {
   width: 100%;
-  height: 400px;
-  margin-top: 10px;
+  height: 300px;
+  margin-top: 2%;
   background-color: #00569c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inria Sans";
+  font-size: 20px;
+
 }
+

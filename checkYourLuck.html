@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>POKEDLE X</title>
+  </head>
+  <body>
+    <div class="logo">
+      <b><a href="main.html"> POKEDLE X </a></b>
+    </div>
+    <img
+      class="light_theme_wallpaper"
+      src="light_theme.png"
+      alt="light theme wallpaper"
+    />
+
+
+    <div class="div_chose_pokemon">
+      <input
+        type="button"
+        value="CHOSE YOUR POKEMON"
+        id="pokemon2"
+        class="chose_pokemon2"
+      />
+    </div>
+    
+    <div class="div_chose_pokemon">
+      <input
+        type="button"
+        value="CHECK YOUR LUCK"
+        id="pokemon"
+        class="chose_pokemon1"
+      />
+    </div>
+
+   
+
+    <div class="no_luck"><p class="luckyOrNot"></p></div>
+
+    <script>
+
+      let Chosen_pokemon
+
+      const pokemon2 = document.querySelector("[id=pokemon2]");
+      pokemon2.addEventListener("click", Chosen_pokemonF);
+
+      function Chosen_pokemonF()
+      {
+        Chosen_pokemon = prompt("CHOSE POKEMON");
+
+        const pokemon = document.querySelector("[id=pokemon]");
+        pokemon.addEventListener("click", fetchAllPokemon);
+
+        let Random_pokemon;
+
+        function fetchAllPokemon() {
+          fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+            .then((response) => response.json())
+            .then(
+              (allpokemon) =>
+                (Random_pokemon =
+                  allpokemon.results[Math.floor(Math.random() * 151)])
+            )
+            .then(
+              fetch(
+                "https://pokeapi.co/api/v2/pokemon/" +
+                  Math.floor(Math.random() * 2 + 1)
+              )
+            )
+            .then((data) => {
+              if (data.name == Chosen_pokemon) {
+                document.querySelector(".luckyOrNot").innerHTML = data.name;
+                document.querySelector(".no_luck").style.background = "#0F0";
+              } else {
+                document.querySelector(".luckyOrNot").innerHTML = data.name;
+                document.querySelector(".no_luck").style.background = "#F00";
+              }
+            });
+            
+        }
+      }
+      
+      
+
+      
+
+
+    </script>
+  </body>
+</html>
