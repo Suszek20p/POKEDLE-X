@@ -15,7 +15,6 @@
       alt="light theme wallpaper"
     />
 
-
     <div class="div_chose_pokemon">
       <input
         type="button"
@@ -24,7 +23,7 @@
         class="chose_pokemon2"
       />
     </div>
-    
+
     <div class="div_chose_pokemon">
       <input
         type="button"
@@ -34,19 +33,27 @@
       />
     </div>
 
-   
+    <div class="div_chose_pokemon">
+      <div class="no_luck">
+        <p class="luckyOrNot"></p>
+      </div>
+    </div>
 
-    <div class="no_luck"><p class="luckyOrNot"></p></div>
+    <div class="div_chose_pokemon">
+      <div class="no_luck">
+        <p class="trials">TRIALS:</p>
+        <p class="count"></p>
+      </div>
+    </div>
 
     <script>
-
-      let Chosen_pokemon
+      let Chosen_pokemon;
 
       const pokemon2 = document.querySelector("[id=pokemon2]");
       pokemon2.addEventListener("click", Chosen_pokemonF);
 
-      function Chosen_pokemonF()
-      {
+      function Chosen_pokemonF() {
+        let count = 0;
         Chosen_pokemon = prompt("CHOSE POKEMON");
 
         const pokemon = document.querySelector("[id=pokemon]");
@@ -55,12 +62,16 @@
         let Random_pokemon;
 
         function fetchAllPokemon() {
+          count = count + 1;
+
+          document.querySelector(".count").innerHTML = " " + count;
+
           fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
             .then((response) => response.json())
             .then(
               (allpokemon) =>
                 (Random_pokemon =
-                  allpokemon.results[Math.floor(Math.random() * 151)])
+                  allpokemon.results[Math.floor(Math.random() * 152)])
             )
             .then(
               fetch(
@@ -71,21 +82,17 @@
             .then((data) => {
               if (data.name == Chosen_pokemon) {
                 document.querySelector(".luckyOrNot").innerHTML = data.name;
-                document.querySelector(".no_luck").style.background = "#0F0";
+                document.querySelector(".no_luck").style.background =
+                  "#00FF00e6";
+                pokemon.removeEventListener("click", fetchAllPokemon);
               } else {
                 document.querySelector(".luckyOrNot").innerHTML = data.name;
-                document.querySelector(".no_luck").style.background = "#F00";
+                document.querySelector(".no_luck").style.background =
+                  "#FF0000e6";
               }
             });
-            
         }
       }
-      
-      
-
-      
-
-
     </script>
   </body>
 </html>
